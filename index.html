@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes wangyoudong {
+            /* 第一帧 */
+            0% {
+                transform: scale(0.8);
+
+            }
+            50% {
+                transform: scale(1.1);
+
+            }
+            100% {
+                transform: scale(1);
+
+            }
+        }
+        body {
+            background-color: rgba(15, 15, 15, 0.943);
+        }
+        .video-box{
+            width: 100%;
+            height: 500px;
+            position: fixed;
+        }
+        video{
+            width: 100%;
+        }
+        .box {
+            width: 250px;
+            height: 80px;
+            box-sizing: border-box;
+            position: absolute;
+            top: 40%;
+            left: 45%;
+            /* transform: translate(-50%, -50%); */
+            border: solid 1px black;
+            transition: all 2s;
+            background-color: lightpink;
+            border-radius: 5px;
+             /* 应用动画 */
+            animation: wangyoudong; 
+            /* 动画持续时间 */
+            animation-duration: 0.3s;
+        }
+
+        .box .head {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 30px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            line-height: 30px;
+            background-color: rgb(255, 243, 249);
+            box-sizing: border-box;
+            font-weight: 400;
+        }
+
+        .box .head .delete {
+            margin: 0 5px;
+            font-size: 20px;
+        }
+
+        .box .head .delete a {
+            margin: 0 8px;
+            line-height: 20px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .box .head .delete .squezz {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            border: 2px solid black;
+        }
+
+        .box .head .alert {
+            margin: 0 5px;
+        }
+
+        .box .body {
+            width: 100%;
+            height: 48px;
+            /* background-color: lavender; */
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 48px;
+            font-family: "华文楷体";
+
+            font-size: 20px;
+            /* border-radius: 5px; */
+
+        }
+        .frist{
+            width: 500px;
+            height: 200px;
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: solid 1px black;
+            transition: all 2s;
+            background-color: white;
+            border-radius: 10px;
+             /* 应用动画 */
+            animation: none 
+
+        }
+        .frist .head{
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            justify-content: space-between;
+            background-color: rgb(219, 219, 219);
+        }
+        .frist .body{
+            width: 100%;
+            height: 120px;
+
+        }
+        .frist .body .bottom{
+            display: flex;
+            justify-content: space-around;
+        }
+        .frist .body .title{
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        .frist .body .bottom a{
+            text-decoration: none;
+            width: 80px;
+            height: 30px;
+            background-color: rgb(40, 117, 194);
+            line-height: 30px;
+            border-radius: 10px;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video-box">
+        <video src="./【哲风壁纸】城市街道-樱花.mp4" autoplay  loop muted></video>
+        <audio src="./音频截取_爱给网_aigei_com.mp3" loop></audio>
+    </div>
+    <div class="box frist">
+        <div class="head">
+            <div class="alert" style="font-weight: bold;">🎃万圣节礼物</div>
+            <div class="delete">
+                <a href="#">—</a>
+                <a href="#" class="squezz"></a>
+                <a href="#">x</a>
+            </div>
+        </div>
+        <div class="body">
+            <div class="title">你有一个万圣节礼物，确定要接受吗？</div>
+            <div class="bottom">
+                <a href="#">no</a>
+                <a href="#">yes</a>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener("load",function(){
+            // 爱心坐标数组
+
+            let heartCoordinates = [
+                {
+                    "x": 725,
+                    "y": 245
+                },
+                {
+                    "x": 725,
+                    "y": 242
+                },
+                {
+                    "x": 726,
+                    "y": 234
+                },
+                {
+                    "x": 728,
+                    "y": 220
+                },
+                {
+                    "x": 733,
+                    "y": 202
+                },
+                {
+                    "x": 740,
+                    "y": 181
+                },
+                {
+                    "x": 750,
+                    "y": 157
+                },
+                {
+                    "x": 763,
+                    "y": 132
+                },
+                {
+                    "x": 780,
+                    "y": 108
+                },
+                {
+                    "x": 801,
+                    "y": 84
+                },
+                {
+                    "x": 826,
+                    "y": 64
+                },
+                {
+                    "x": 853,
+                    "y": 46
+                },
+                {
+                    "x": 884,
+                    "y": 34
+                },
+                {
+                    "x": 917,
+                    "y": 26
+                },
+                {
+                    "x": 952,
+                    "y": 24
+                },
+                {
+                    "x": 988,
+                    "y": 27
+                },
+                {
+                    "x": 1024,
+                    "y": 35
+                },
+                {
+                    "x": 1059,
+                    "y": 49
+                },
+                {
+                    "x": 1092,
+                    "y": 67
+                },
+                {
+                    "x": 1124,
+                    "y": 89
+                },
+                {
+                    "x": 1152,
+                    "y": 115
+                },
+                {
+                    "x": 1176,
+                    "y": 144
+                },
+                {
+                    "x": 1195,
+                    "y": 175
+                },
+                {
+                    "x": 1209,
+                    "y": 207
+                },
+                {
+                    "x": 1218,
+                    "y": 241
+                },
+                {
+                    "x": 1221,
+                    "y": 276
+                },
+                {
+                    "x": 1218,
+                    "y": 311
+                },
+                {
+                    "x": 1209,
+                    "y": 347
+                },
+                {
+                    "x": 1195,
+                    "y": 382
+                },
+                {
+                    "x": 1176,
+                    "y": 418
+                },
+                {
+                    "x": 1152,
+                    "y": 454
+                },
+                {
+                    "x": 1124,
+                    "y": 489
+                },
+                {
+                    "x": 1092,
+                    "y": 524
+                },
+                {
+                    "x": 1059,
+                    "y": 559
+                },
+                {
+                    "x": 1024,
+                    "y": 593
+                },
+                {
+                    "x": 988,
+                    "y": 627
+                },
+                {
+                    "x": 952,
+                    "y": 661
+                },
+                {
+                    "x": 917,
+                    "y": 693
+                },
+                {
+                    "x": 884,
+                    "y": 724
+                },
+                {
+                    "x": 853,
+                    "y": 754
+                },
+                {
+                    "x": 826,
+                    "y": 782
+                },
+                {
+                    "x": 624,
+                    "y": 782
+                },
+                {
+                    "x": 597,
+                    "y": 754
+                },
+                {
+                    "x": 566,
+                    "y": 724
+                },
+                {
+                    "x": 533,
+                    "y": 693
+                },
+                {
+                    "x": 498,
+                    "y": 661
+                },
+                {
+                    "x": 462,
+                    "y": 627
+                },
+                {
+                    "x": 426,
+                    "y": 593
+                },
+                {
+                    "x": 391,
+                    "y": 559
+                },
+                {
+                    "x": 358,
+                    "y": 524
+                },
+                {
+                    "x": 326,
+                    "y": 489
+                },
+                {
+                    "x": 298,
+                    "y": 454
+                },
+                {
+                    "x": 274,
+                    "y": 418
+                },
+                {
+                    "x": 255,
+                    "y": 382
+                },
+                {
+                    "x": 241,
+                    "y": 347
+                },
+                {
+                    "x": 232,
+                    "y": 311
+                },
+                {
+                    "x": 229,
+                    "y": 276
+                },
+                {
+                    "x": 232,
+                    "y": 241
+                },
+                {
+                    "x": 241,
+                    "y": 207
+                },
+                {
+                    "x": 255,
+                    "y": 175
+                },
+                {
+                    "x": 274,
+                    "y": 144
+                },
+                {
+                    "x": 298,
+                    "y": 115
+                },
+                {
+                    "x": 326,
+                    "y": 89
+                },
+                {
+                    "x": 358,
+                    "y": 67
+                },
+                {
+                    "x": 391,
+                    "y": 49
+                },
+                {
+                    "x": 426,
+                    "y": 35
+                },
+                {
+                    "x": 462,
+                    "y": 27
+                },
+                {
+                    "x": 498,
+                    "y": 24
+                },
+                {
+                    "x": 533,
+                    "y": 26
+                },
+                {
+                    "x": 566,
+                    "y": 34
+                },
+                {
+                    "x": 597,
+                    "y": 46
+                },
+                {
+                    "x": 624,
+                    "y": 64
+                },
+                {
+                    "x": 649,
+                    "y": 84
+                },
+                {
+                    "x": 670,
+                    "y": 108
+                },
+                {
+                    "x": 687,
+                    "y": 132
+                },
+                {
+                    "x": 700,
+                    "y": 157
+                },
+                {
+                    "x": 710,
+                    "y": 181
+                },
+                {
+                    "x": 717,
+                    "y": 202
+                },
+                {
+                    "x": 722,
+                    "y": 220
+                },
+                {
+                    "x": 724,
+                    "y": 234
+                },
+                {
+                    "x": 725,
+                    "y": 242
+                },
+                {
+                    "x": 250,
+                    "y": 372
+                },
+                {
+                    "x": 926,
+                    "y": 25
+                },
+                {
+                    "x": 360,
+                    "y": 65
+                },
+                {
+                    "x": 317,
+                    "y": 97
+                },
+                {
+                    "x": 726,
+                    "y": 236
+                },
+                {
+                    "x": 725,
+                    "y": 244
+                },
+                {
+                    "x": 717,
+                    "y": 202
+                },
+                {
+                    "x": 958,
+                    "y": 24
+                },
+                {
+                    "x": 1153,
+                    "y": 116
+                },
+                {
+                    "x": 547,
+                    "y": 707
+                },
+                {
+                    "x": 299,
+                    "y": 114
+                },
+                {
+                    "x": 246,
+                    "y": 362
+                },
+                {
+                    "x": 948,
+                    "y": 24
+                },
+                {
+                    "x": 553,
+                    "y": 712
+                },
+                {
+                    "x": 1160,
+                    "y": 124
+                },
+                {
+                    "x": 1160,
+                    "y": 124
+                },
+                {
+                    "x": 381,
+                    "y": 54
+                },
+                {
+                    "x": 402,
+                    "y": 569
+                },
+                {
+                    "x": 352,
+                    "y": 70
+                }
+            ]
+            const audio = document.querySelector("audio")
+            const box = document.querySelector(".box")
+            const color = ['lightpink','lightpink', 'skyblue', 'lightgreen', 'lavender', 'lightyellow',"aque",, 'skyblue',
+                'plum', 'coral', 'bisque', 'aquamarine', 'mistyrose', 'honeydew',
+                'peachpuff', 'paleturquoise', 'lavenderblush','lightpink', 'oldlace', 'lemonchiffon',
+                'lightcyan', 'lightpink', 'lightsalmon', 'lightseagreen',
+                'lightskyblue', 'lightslategray', 'lightsteelblue', 'lightyellow', "#FFB7C5", "#A2E1DB", "#C5B5E5", "#FFF8B5", "#A2C4E0",]
+
+            const tips = ["多喝水哦~", "我想你了", "别感冒了", '早点休息', '愿所有烦恼都消失', '别熬夜', '今天过得开心嘛', '天冷了，多穿衣服', '期待下一次见面', '照顾好自己', '多喝水', '记得按时吃饭哦', '好好吃饭', '好好休息', '早点休息', '天天开心',
+                '记得喝水', '按时吃饭', '别熬夜了', '照顾好自己',
+                '注意身体', '记得运动', '放松一下', '保持微笑',
+                '劳逸结合', '别太劳累', '记得午休', '多吃水果',
+                '出去走走', '呼吸新鲜空气', '保持好心情', '别久坐',
+                '记得早餐', '保护眼睛', '注意保暖', '别着凉',
+                '保持健康', '平安喜乐', '开心每一天', '一切顺利',
+                '万事如意', '心想事成']
+            document.querySelector(".box").addEventListener("click", (e) => {
+                if (e.target.tagName === "A") {
+                    audio.play()
+                    box.style.opacity = 0
+                    setTimeout(()=>{
+                        box.remove()
+                        let i = 0
+                        let time = setInterval(function () {
+
+                            const crandom = parseInt(Math.random() * color.length)
+                            const trandom = parseInt(Math.random() * tips.length)
+                            const box1 = document.createElement("div")
+                            box1.classList.add("box")
+                            box1.style.top = heartCoordinates[i]["y"] + "px"
+                            box1.style.left = heartCoordinates[i]["x"] + "px"
+                            box1.style.transform = "none"
+                            box1.style.backgroundColor = color[crandom]
+                            const body = document.querySelector('body')
+                            box1.innerHTML = `
+                            <div class="head">
+                                <div class="alert">❤️温馨提示</div>
+                                <div class="delete">
+                                    <a href="#">—</a>
+                                    <a href="#" class="squezz"></a>
+                                    <a href="#">x</a>
+                                </div>
+                            </div>
+                            <div class="body" >
+                                ${tips[trandom]}
+                            </div>
+                            `
+                            body.appendChild(box1)
+                            i++
+                            if (i >= 80) {
+                                clearInterval(time)
+                                const box = document.querySelectorAll(".box")
+                                for (let i = 0; i < box.length; i++) {
+                                    box[i].style.top = "50%"
+                                    box[i].style.left = "50%"
+                                    box[i].style.transform = 'translate(-50%,-50%)'
+                                }
+                                setTimeout(function () {
+                                    for (let i = 0; i < box.length; i++) {
+                                        box[i].style.display = "none"
+                                    }
+                                    let k = 0
+                                    time = setInterval(function () {
+                                        const crandom = parseInt(Math.random() * color.length)
+                                        const trandom = parseInt(Math.random() * tips.length)
+                                        const box1 = document.createElement("div")
+                                        box1.classList.add("box")
+                                        box1.style.top = parseInt(Math.random() * 90) + "%"
+                                        box1.style.left = parseInt(Math.random() * 1400) + "px"
+                                        box1.style.transform = "none"
+                                        box1.style.backgroundColor = color[crandom]
+                                        const body = document.querySelector('body')
+                                        box1.innerHTML = `
+                                        <div class="head">
+                                            <div class="alert">❤️温馨提示</div>
+                                            <div class="delete">
+                                                <a href="#">—</a>
+                                                <a href="#" class="squezz"></a>
+                                                <a href="#">x</a>
+                                            </div>
+                                        </div>
+                                        <div class="body" >
+                                            ${tips[trandom]}
+                                        </div>
+                                        `
+                                        body.appendChild(box1)
+                                        k++
+                                        if (k >= 100) {
+                                            clearInterval(time)
+                                            
+                                            const box = document.querySelectorAll(".box")
+                                            for (let i = 0; i < box.length; i++) {
+                                                box[i].style.opacity = 0
+                                            }
+                                            setTimeout(function(){
+                                                for (let i = 0; i < box.length; i++) {
+                                                    box[i].remove()
+                                                }
+                                                
+                                            },1500)
+                                            
+                                        }
+                                    }, 100)
+                                }, 1000)
+                            }
+                        }, 200)
+
+                    },1000)
+                    
+                }
+
+            })
+        })
+        
+    </script>
+</body>
+
+</html>
